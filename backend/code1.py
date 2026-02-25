@@ -26,6 +26,7 @@ try:
     query="INSERT INTO students(name,age) VALUES(%s,%s)"
     val=("sachin",27)
     cursor.execute(query,val)
+    print("inserted data succeasfully")
     
     connection.commit()
     
