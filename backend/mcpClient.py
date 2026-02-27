@@ -22,6 +22,8 @@ async def main():
                 "greet",
                 {"name": "jeevan"}
             )
+            
+          
 
             print("Server Response:", result.content[0].text)
 
