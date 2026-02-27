@@ -1,7 +1,8 @@
 # mcpClient.py
 import asyncio
-from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+from mcp import ClientSession, StdioServerParameters
+
 
 async def main():
     # Define server execution command
