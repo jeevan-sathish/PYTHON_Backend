@@ -1,6 +1,7 @@
 import mysql.connector
 from dotenv import load_dotenv
 import os
+import sys
 import asyncio
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
@@ -67,9 +68,9 @@ if conn.is_connected():
 
             async def main():
                 server = StdioServerParameters(
-                    command="python",
-                    args=["grpByMcpServer.py"]
-                )
+                     command=sys.executable,  
+                       args=[os.path.abspath("grpByMcpServer.py")]
+                        )
 
                 async with stdio_client(server) as (read, write):
                     async with ClientSession(read, write) as session:

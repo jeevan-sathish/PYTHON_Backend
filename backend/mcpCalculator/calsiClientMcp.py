@@ -8,8 +8,7 @@ async def main():
     server=StdioServerParameters(
         command="python",
         args=["calsiServerMcp.py"]
-    )
-    
+    ) 
     async with stdio_client(server) as (read,write):
         async with ClientSession(read,write) as session:
             await session.initialize()
