@@ -15,8 +15,8 @@ cursor = conn.cursor()
 
 if conn.is_connected():
     print("connected succesfully")
-    
-query =" SELECT users.name ,orders.product FROM users LEFT JOIN orders ON users.id = orders.user_id "
+ 
+query =" SELECT * FROM users "
 cursor.execute(query)
 row =cursor.fetchall()
 
