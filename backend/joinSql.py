@@ -23,6 +23,7 @@ row =cursor.fetchall()
 for r in row:
     print(r)
 
+
 cursor.close()
 conn.close()
 
