@@ -18,12 +18,20 @@ if conn.is_connected():
 else:
     print("not connected")
     
-query =" SELECT * FROM bank "
-cursor.execute(query)
-row =cursor.fetchall()
+try:
+    query =" SELECT * FROM bank "
+    cursor.execute(query)
+    row =cursor.fetchall()
 
-for r in row:
-    print(r)
+    for r in row:
+        print(r)
+    
+    cursor.commit()
+    
+except Exception as e:
+    print("error occures:",e)
+    conn.rollback()
+    
 
 
 cursor.close()
