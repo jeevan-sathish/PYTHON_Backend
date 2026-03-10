@@ -15,7 +15,9 @@ cursor = conn.cursor()
 
 if conn.is_connected():
     print("connected succesfully")
- 
+else:
+    print("not connected")
+    
 query =" SELECT * FROM bank "
 cursor.execute(query)
 row =cursor.fetchall()
