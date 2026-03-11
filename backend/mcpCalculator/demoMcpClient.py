@@ -5,7 +5,7 @@ import asyncio
 async def main():
     server =StdioServerParameters(
         commands="python",
-        args=['/backend/mcpCalculator/demoMcpServer.py']
+        args=['/demoMcpServer.py']
     )
     
     async with stdio_client(server) as (read,write):

@@ -5,7 +5,7 @@ mcp =FastMCP("my server")
 
 @mcp.tool()
 def demo(name:str)->str:
-    print(name)
+    print(name ,"is my name ")
 
 if __name__=="__mian__":
     mcp.run()
