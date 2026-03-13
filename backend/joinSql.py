@@ -13,25 +13,14 @@ conn =mysql.connector.connect(
 
 cursor = conn.cursor()
 
-if conn.is_connected():
-    print("connected succesfully")
-else:
-    print("not connected")
-    
-try:
-    query =" SELECT * FROM bank "
-    cursor.execute(query)
-    row =cursor.fetchall()
+def handle_user():
+    name =str(input("enter your name:"))
+    query = "insert into users(name) values(%s)"
+    val =(name,)
+    cursor.execute(query,val)
+    conn.commit()
 
-    for r in row:
-        print(r)
-    
-    cursor.commit()
-    
-except Exception as e:
-    print("error occures:",e)
-    conn.rollback()
-    
+def handle_products()    
 
 
 cursor.close()
