@@ -68,9 +68,7 @@ def handle_orders():
         print("User:", row[0], "| Product:", row[1])
 
 
-# Example execution
-handle_user()
-handle_products()
+
 handle_orders()
 
 cursor.close()
