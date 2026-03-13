@@ -5,9 +5,8 @@ mcp =FastMCP("my server")
 
 @mcp.tool()
 def demo(name:str)->str:
-    print(name ,"is my name ")
-    print("server executed succesfull")
+    return f"{name} is my name"
 
-if __name__=="__mian__":
+if __name__=="__main__":
     mcp.run()
     
