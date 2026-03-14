@@ -1,11 +1,17 @@
-from mpc.server.fastmcp import FastMCP
+from mcp.server.fastmcp import FastMCP
+import ollama
 
-mcp =FastMCP("my mcp server with ollama")
+mcp = FastMCP("my mcp server with ollama")
 
+@mcp.tool()
+def getResponse(prompt: str) -> str:
+    response = ollama.chat(
+        model="llama3",
+        messages=[{"role":"user","content":prompt}]
+        
+    )
+    
+    return response["message"]["content"]
 
-@mcp.tool
-def getResponce(prompt:str)->str:
-    return F"this is :{prompt}"
-
-if __name__=="__main__":
+if __name__ == "__main__":
     mcp.run()

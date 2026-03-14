@@ -11,7 +11,7 @@ async def main():
         async with ClientSession(read,write) as session:
             await session.initialize()
             prompt=str(input("enter the prompt:"))
-            result = await session.call_tool("getResponce",{"prompt":prompt})
+            result = await session.call_tool("getResponse",{"prompt":prompt})
             print("responce:", result.content[0].text)
 
 
