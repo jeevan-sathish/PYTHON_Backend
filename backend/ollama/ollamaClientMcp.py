@@ -14,7 +14,8 @@ async def main():
             await session.initialize()
             prompt =input("enter the prompt:")
             result = await session.call_tool("getResponse",{"prompt":prompt})
-            print("response is:", result.content[0].text)
+            final =result.content[0].text
+            print(final[0])
 
 
 asyncio.run(main())
