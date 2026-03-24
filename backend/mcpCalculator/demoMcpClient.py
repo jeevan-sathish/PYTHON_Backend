@@ -11,9 +11,7 @@ async def main():
     async with stdio_client(server) as (read,write):
         async with ClientSession(read,write) as session:
             await session.initialize()
-            tools = await session.list_tools()
-            print(tools)
-            result = await session.call_tool("greet",{"name":"jeevan"})
+            result = await session.call_tool("add",{"a":1,"b":2})
             print(result.content[0].text)
 
 
