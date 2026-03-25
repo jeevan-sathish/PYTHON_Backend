@@ -13,5 +13,9 @@
 # )
 # print(response.choices[0].message.content)
 
-name =" this 'is' jeevan s "
-print(name.strip(''))
+
+import json
+name ="this is jeevan"
+
+parse_json=json.load(name)
+print(parse_json)
